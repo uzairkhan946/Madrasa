@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quran Teaching Center - Nazra, Hifz & Masnoon Dua</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c786c;
+            --secondary: #004445;
+            --light: #f8f1e9;
+            --accent: #ff7e33;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        .intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .intro p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .courses {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .course-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .nazra-img {
+            background-image: url('https://images.unsplash.com/photo-1563422156298-c778a278f9a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');
+        }
+        
+        .hifz-img {
+            background-image: url('https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');
+        }
+        
+        .dua-img {
+            background-image: url('https://images.unsplash.com/photo-1563476653656-76a00a61863c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card-content h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .card-content p {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+        
+        .features {
+            margin: 4rem 0;
+        }
+        
+        .features h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--secondary);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        .cta {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            border-radius: 10px;
+            margin: 3rem 0;
+        }
+        
+        .cta h2 {
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+        
+        .whatsapp-btn {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        footer {
+            background: var(--secondary);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .courses {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content" data-aos="fade-down">
+            <h1>Quran Teaching Center</h1>
+            <p class="subtitle">Learn Nazra, Hifz and Masnoon Duas with Proper Tajweed</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section class="intro" data-aos="fade-up">
+            <h2>Welcome to Our Quran Learning Program</h2>
+            <p>We provide comprehensive Quran education for students of all ages with qualified instruction in proper recitation, memorization, and understanding of daily supplications.</p>
+        </section>
+        
+        <section class="courses">
+            <div class="course-card" data-aos="fade-right" onclick="window.open('https://wa.me/923319940383?text=I%20am%20interested%20in%20Nazra%20course')">
+                <div class="card-img nazra-img"></div>
+                <div class="card-content">
+                    <h3>Nazra Quran</h3>
+                    <p>Learn to recite the Holy Quran with proper pronunciation (Tajweed) and fluency. Our step-by-step program helps students read Quran correctly.</p>
+                </div>
+            </div>
+            
+            <div class="course-card" data-aos="fade-up" onclick="window.open('https://wa.me/923319940383?text=I%20am%20interested%20in%20Hifz%20course')">
+                <div class="card-img hifz-img"></div>
+                <div class="card-content">
+                    <h3>Hifz Quran</h3>
+                    <p>Memorization of the Holy Quran with proper techniques and revision schedules. We help students commit the Quran to memory with understanding.</p>
+                </div>
+            </div>
+            
+            <div class="course-card" data-aos="fade-left" onclick="window.open('https://wa.me/923319940383?text=I%20am%20interested%20in%20Masnoon%20Duas%20course')">
+                <div class="card-img dua-img"></div>
+                <div class="card-content">
+                    <h3>Masnoon Duas</h3>
+                    <p>Learn authentic daily supplications from the Quran and Sunnah for all occasions of life with their meanings and proper recitation.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="features">
+            <h2 data-aos="fade-up">Our Features</h2>
+            <div class="feature-grid">
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-quran"></i>
+                    </div>
+                    <h3>Proper Tajweed</h3>
+                    <p>Learn correct pronunciation and rules of Quranic recitation</p>
+                </div>
+                
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Qualified Instruction</h3>
+                    <p>Experienced teachers with Ijazah in Quran recitation</p>
+                </div>
+                
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-laptop-house"></i>
+                    </div>
+                    <h3>Flexible Learning</h3>
+                    <p>Online and in-person classes available</p>
+                </div>
+                
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3>All Ages</h3>
+                    <p>Programs for children, youth and adults</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="cta" data-aos="zoom-in">
+            <h2>Start Your Quran Learning Journey Today</h2>
+            <p>Contact us now to enroll or get more information about our programs</p>
+            <a href="https://wa.me/923319940383?text=I%20want%20to%20join%20Quran%20classes" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> Message on WhatsApp
+            </a>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 Quran Teaching Center. All rights reserved.</p>
+        <p>Contact: 03319940383</p>
+    </footer>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        
+        // Make all course cards clickable for WhatsApp
+        document.querySelectorAll('.course-card').forEach(card => {
+            card.style.cursor = 'pointer';
+        });
+    </script>
+</body>
+</html>
